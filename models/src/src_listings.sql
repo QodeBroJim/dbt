@@ -9,7 +9,7 @@ with raw_listings as (
         price as price_str,
         created_at,
         updated_at
-    from airbnb.raw.raw_listings
+    from {{ source('airbnb', 'listings') }}
 )
 
 select * from raw_listings
